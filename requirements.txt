@@ -1,0 +1,50 @@
+# requirements.txt
+
+# attention-sink-probing
+# Tested on: Python 3.10, CUDA 11.8, single A100 / T4 (Colab)
+# Install: pip install -r requirements.txt
+#
+# NOTE: transformer_lens pins its own torch version sometimes — if you hit
+# conflicts, install torch first manually then transformer_lens.
+# torch==2.1.0+cu118 works on Colab T4; cpu-only also fine for small models.
+
+# Core ML
+torch==2.1.2
+torchvision==0.16.2  # not strictly needed but avoids import warnings
+numpy==1.26.4
+
+# TransformerLens — the whole point of this project
+# >=1.8 has Pythia support with the corrected layernorm ordering
+transformer-lens==1.19.0
+
+# HuggingFace ecosystem
+transformers==4.40.0
+datasets==2.19.0
+huggingface-hub==0.23.0
+tokenizers==0.19.1
+accelerate==0.30.0  # needed for some model loading paths
+
+# Probing / analysis
+scikit-learn==1.4.2
+scipy==1.13.0
+
+# Plotting
+matplotlib==3.8.4
+seaborn==0.13.2
+
+# Utilities
+tqdm==4.66.4
+einops==0.7.0        # TransformerLens depends on this anyway
+jaxtyping==0.2.28    # TL uses this for shape annotations; useful in our code too
+rich==13.7.1         # pretty printing experiment tables in terminal
+pandas==2.2.2        # result tables
+joblib==1.4.2        # parallel probe training across layers
+
+# Optional: for saving/loading experiment state
+h5py==3.11.0
+
+# Dev / notebook
+ipython==8.24.0
+ipykernel==6.29.4
+jupyter==1.0.0
+notebook==7.1.3
