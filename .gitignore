@@ -1,0 +1,40 @@
+# Dependencies
+__pycache__/
+*.pyc
+venv/
+.venv/
+node_modules/
+vendor/
+
+# Build
+target/
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Environment
+.env
+.env.local
+*.tfvars
+!*.tfvars.example
+
+# OS
+.DS_Store
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Logs
+*.log
+
+# Coverage
+.coverage
+htmlcov/
+coverage/
